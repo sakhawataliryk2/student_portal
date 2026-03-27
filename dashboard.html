@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Dashboard - Pan-Atlantic University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+   
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="page-wrapper">
+        <div class="main-container">
+
+            <!-- =======================
+            LEFT SIDEBAR
+            ======================== -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <img src="images/logo.png" alt="PAU Logo">
+                </div>
+                
+                <div class="student-profile">
+                    <img src="images/profile.jpg" alt="Student Picture">
+                    <p class="profile-id">PAU/544ST20232555</p>
+                    <p class="profile-name text-red">OWOLABI</p>
+                    <p class="profile-name-light text-red">Oluwaseun</p>
+                    <p class="profile-id">23110211053</p>
+                    <button class="logout-btn" onclick="window.location.href='index.html'"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+                </div>
+                
+                <div class="profile-level-info">
+                    <p>300 Level - BA</p>
+                    <div>
+                        <i class="fas fa-cog"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-power-off"></i>
+                    </div>
+                </div>
+
+                <div class="sidebar-separator">
+                    <span>STUDENT PORTAL</span>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="has-dropdown open"> 
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li class="active-submenu"><a href="dashboard.html">Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-graduation-cap"></i> Academics</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="subjects.html">Subjects</a></li>
+                                <li><a href="timetable.html">Time-Table</a></li>
+                                <li><a href="grades.html">Grades</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                             <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-file-invoice-dollar"></i> Fees & Bills</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="fees.html">Semester fees</a></li>
+                                <li><a href="allowances.html">Allowances/Shop</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-envelope"></i> Messaging</div>
+                                <span class="msg-count">99,867</span>
+                            </a>
+                             <ul class="submenu">
+                                <li><a href="messaging.html">Messages / Mails</a></li>
+                                <li><a href="publications.html">Publications</a></li>
+                                <li><a href="dashboard.html">Uploads</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            
+            <main class="main-content">
+                <header class="main-header">
+                    <i class="fas fa-bars menu-icon" id="menu-icon"></i>
+                    <div class="header-right">
+                        <span>Pan-Atlantic University</span>
+                        <i class="fas fa-search"></i>
+                    </div>
+                </header>
+
+                <div class="dashboard-header  header-card">
+                    <h2>Student's Dashboard</h2>
+                    <div class="breadcrumb">Home > Dashboard</div>
+                </div>
+                
+
+                <div class="card-row">
+                    <div class="stat-card blue"> <i class="fas fa-graduation-cap"></i> <div class="stat-info"><h2>0</h2><p>Unread Messages</p></div> <div class="progress-bar"></div> </div>
+                    <div class="stat-card green"> <i class="fas fa-book"></i> <div class="stat-info"><h2>0</h2><p>Class Courses</p></div> <div class="progress-bar"></div> </div>
+                    <div class="stat-card purple"> <i class="fas fa-university"></i> <div class="stat-info"><h2>2</h2><p>Current Semester</p></div> <div class="progress-bar"></div> </div>
+                    <div class="stat-card red"> <i class="fas fa-calendar-alt"></i> <div class="stat-info"><h2 class="red-text">2024/2025</h2><p>Current Session</p></div> <div class="progress-bar"></div> </div>
+                </div>
+
+                <div class="content-grid-four">
+                    <div class="card dark-blue">
+                        <h4><i class="far fa-lightbulb"></i> News and Updates</h4>
+                        <p class="date">Fri July 25, 2025</p>
+                        <div class="tabs"><span class="active"><i class="fas fa-arrow-up"></i> Information Board</span><span>Publications</span></div>
+                        <p class="admin-msg">From the Administrator,</p>
+                    </div>
+                    <div class="card green-bg">
+                        <h4><i class="fas fa-credit-card"></i> Bills and Fees</h4>
+                        <p>Wallet : <strong>₦0</strong></p>
+                        <p>Bills : <strong>₦0</strong></p>
+                        <button class="view-fees-btn"><i class="fas fa-circle"></i> View Fees</button>
+                    </div>
+                    <div class="card white">
+                        <h4><i class="fas fa-user-lock"></i> Student's Login Details</h4>
+                        <i class="fas fa-user user-icon-large"></i>
+                        <p class="details-p"><span>Username/Admission Number:</span><strong>02555</strong></p>
+                        <p class="details-p"><span>Matric Number:</span><strong>23110211053</strong></p>
+                      <div class="button-container">
+    <a href="grades.html"><button class="academic-results-btn">Academic Results</button></a>
+</div>
+                    </div>
+                  <div class="card dark-green-bg">
+    <h4><i class="fas fa-route"></i> School Contacts</h4>
+    <p>registry@pau.edu.ng</p>
+    <p>+234(1)7121728</p>
+    <p>Main Campus: Km 52 Lekki - Epe Expressway, Ibeju-Lekki, Lagos Nigeria.</p>
+</div>
+                </div>
+
+                <div class="profile-grid">
+                    <div class="card white">
+                        <h4>Student's Profile</h4>
+                        <div class="profile-details">
+                            <div><p><span>Surname/Last Name:</span>OWOLABI</p><p><span>Portal ID:</span>PAU/544ST20232555</p><p><span>Gender:</span>Male</p></div>
+                            <div><p><span>Other Names:</span>Oluwaseun</p><p><span>Current Class:</span>300 Level - BA BSc. Business Administration</p><p><span>Email Address:</span>oluwaseun.owolabi@pau.edu.ng</p></div>
+                        </div>
+                    </div>
+                    <!-- <div class="card white">
+                        <h4>Parent's Profile</h4>
+                         <div class="profile-details">
+                            <div><p><span>Name:</span></p><p><span>Phone Number:</span></p><p><span>Address:</span></p></div>
+                            <div><p><span>Email:</span></p><p><span>Gender:</span></p></div>
+                        </div>
+                        <button class="change-password-btn">Change Password</button>
+                    </div> -->
+                </div>
+                
+                <footer class="main-footer">
+                     <p>© 2025 <span class="footer-red-text">Schoolcube.net</span> Portal by Revocube Schoolrevs</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <div class="chat-icon">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- JAVASCRIPT FOR DROPDOWNS AND RESPONSIVENESS -->
+    <script>
+        // --- Sidebar Dropdown Logic ---
+        const dropdownToggles = document.querySelectorAll('.nav-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (event) => {
+                event.preventDefault();
+                const parentLi = toggle.closest('.has-dropdown');
+                document.querySelectorAll('.has-dropdown.open').forEach(openLi => {
+                    if (openLi !== parentLi) {
+                        openLi.classList.remove('open');
+                    }
+                });
+                parentLi.classList.toggle('open');
+            });
+        });
+
+        // --- Responsive Sidebar Toggle Logic ---
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        function closeSidebar() {
+            sidebar.classList.remove('sidebar-visible');
+            overlay.classList.remove('overlay-visible');
+        }
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.add('sidebar-visible');
+            overlay.classList.add('overlay-visible');
+        });
+        overlay.addEventListener('click', closeSidebar);
+    </script>
+</body>
+</html>

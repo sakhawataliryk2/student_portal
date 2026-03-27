@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Publications - Pan-Atlantic University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="page-wrapper">
+        <div class="main-container">
+            <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <img src="images/logo.png" alt="PAU Logo">
+                </div>
+                
+                <div class="student-profile">
+                    <img src="images/profile.jpg" alt="Student Picture">
+                    <p class="profile-id">PAU/544ST20232555</p>
+                    <p class="profile-name text-red">OWOLABI</p>
+                    <p class="profile-name-light text-red">Oluwaseun</p>
+                    <p class="profile-id">23110211053</p>
+                    <button class="logout-btn" onclick="window.location.href='index.html'"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+                </div>
+                
+                <div class="profile-level-info">
+                    <p>300 Level - BA</p>
+                    <div>
+                        <i class="fas fa-cog"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-power-off"></i>
+                    </div>
+                </div>
+
+                <div class="sidebar-separator">
+                    <span>STUDENT PORTAL</span>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="has-dropdown open"> 
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li class="active-submenu"><a href="dashboard.html">Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-graduation-cap"></i> Academics</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="subjects.html">Subjects</a></li>
+                                <li><a href="timetable.html">Time-Table</a></li>
+                                <li><a href="grades.html">Grades</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                             <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-file-invoice-dollar"></i> Fees & Bills</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="fees.html">Semester fees</a></li>
+                                <li><a href="allowances.html">Allowances/Shop</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-envelope"></i> Messaging</div>
+                                <span class="msg-count">99,867</span>
+                            </a>
+                             <ul class="submenu">
+                                <li><a href="messaging.html">Messages / Mails</a></li>
+                                <li><a href="publications.html">Publications</a></li>
+                                <li><a href="dashboard.html">Uploads</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <main class="main-content">
+                <header class="main-header"><i class="fas fa-bars menu-icon" id="menu-icon"></i><div class="header-right"><span>Pan-Atlantic University</span><i class="fas fa-search"></i></div></header>
+                
+                <div class="dashboard-header header-card">
+                    <div>
+                        <h2 class="page-main-title">2024/2025 300 Level - BA BSc. Business Administration</h2>
+                        <h2 class="page-main-title">Publications/Newsletters</h2>
+                    </div>
+                    <div class="breadcrumb">Home > News</div>
+                </div>
+                
+                <div class="publications-wrapper card-white">
+                    <div class="publications-header">
+                        <div class="publications-actions-left">
+                            <button class="advance-search-btn">Advance Search</button>
+                            <button class="search-icon-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="publications-actions-right">
+                            
+                             <div class="quick-search-placeholder">Quick search</div>
+                        </div>
+                    </div>
+
+                    <div class="no-news-alert">
+                        No news updates
+                    </div>
+                </div>
+
+                <footer class="main-footer"><p>© 2025 <span class="footer-red-text">Schoolcube.net</span> Portal by Revocube Schoolrevs</p></footer>
+            </main>
+        </div>
+    </div>
+    <div class="chat-icon"><i class="fas fa-comment-dots"></i></div>
+    <script>const dropdownToggles=document.querySelectorAll('.nav-toggle');dropdownToggles.forEach(toggle=>{toggle.addEventListener('click',event=>{event.preventDefault();const parentLi=toggle.closest('.has-dropdown');if(!parentLi)return;document.querySelectorAll('.has-dropdown.open').forEach(openLi=>{if(openLi!==parentLi){openLi.classList.remove('open')}});parentLi.classList.toggle('open')})});const menuIcon=document.getElementById('menu-icon');const sidebar=document.getElementById('sidebar');const overlay=document.getElementById('overlay');function closeSidebar(){sidebar.classList.remove('sidebar-visible');overlay.classList.remove('overlay-visible')}menuIcon.addEventListener('click',()=>{sidebar.classList.add('sidebar-visible');overlay.classList.add('overlay-visible')});overlay.addEventListener('click',closeSidebar);</script>
+</body>
+</html>

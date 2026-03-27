@@ -1,0 +1,689 @@
+/* =================================
+   GENERAL & LOGIN PAGE STYLES
+   ================================= */
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9fafb;
+}
+.chat-icon {
+    position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background-color: #d93025;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white;
+    font-size: 24px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer; z-index: 1000;
+}
+/* --- Login Page Styles --- */
+.login-container {
+    height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;
+    background-color: #2a3f6c; background-image: url('https://portal.pau.edu.ng/assets/img/bg-pattern.png'); background-repeat: repeat;
+}
+.login-box {
+    background-color: white; padding: 40px 50px; border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); width: 380px; text-align: center;
+}
+.login-box .logo { width: 130px; margin-bottom: 10px; }
+.login-box .portal-title { font-size: 18px; font-weight: 600; color: #333; margin: 0; }
+.login-box .portal-subtitle { font-size: 14px; color: #777; margin: 5px 0 30px 0; }
+.login-box .input-field { width: 100%; border: none; border-bottom: 1px solid #ccc; padding: 10px 0; font-size: 16px; outline: none; background-color: transparent; }
+.login-box .links-container { display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 30px; }
+.login-box .link { text-decoration: none; color: #555; }
+.login-box .login-btn { width: 100%; padding: 15px; background-color: #1e3a6b; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; margin-bottom: 30px; }
+.login-box .copyright { font-size: 12px; color: #999; }
+.login-box .error-message { color: #e74c3c; background-color: #fdd; border: 1px solid #e74c3c; border-radius: 4px; padding: 10px; margin-bottom: 20px; display: none; }
+
+/* =================================
+   DASHBOARD & COMMON STYLES
+   ================================= */
+.page-wrapper { max-width: 100%; margin: 0 auto; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+.main-container { display: flex; }
+.sidebar { width: 200px; background: #fff; min-height: 100vh; box-shadow: 1px 0 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; flex-shrink: 0; color: #67757c; }
+.sidebar-header {
+    padding: 2px 15px 0px 12px; 
+    text-align: center;
+    border-bottom: 1px solid #00407c; 
+}
+.student-profile { padding: 25px 20px;  text-align: center; }
+.student-profile img { width: 100px; height: 100px; border-radius: 1px; margin-bottom: 5px; }
+.profile-id { font-size: 12px; color: #888; margin: 2px 0; }
+.profile-name { font-weight: 600; font-size: 15px; margin: 2px 0; }
+.profile-name-light { font-size: 14px; margin: 2px 0 10px 0; }
+.text-red { color: #e53935 !important; }
+.logout-btn { background-color: #2e3a6e; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; font-size: 14px; width: auto; }
+.profile-level-info { text-align: center; font-size: 13px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+.sidebar-separator { text-align: left; color: #aaa; font-size: 10px; font-weight: bold; padding: 20px 25px 10px 25px; }
+.sidebar-nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-nav li a { display: flex; justify-content: space-between; align-items: center; padding: 12px 25px; color: #67757c; text-decoration: none; font-size: 14px; }
+.sidebar-nav li a:hover { background-color: #f8f9fa; color: #2c3e50; }
+.nav-arrow { transition: transform 0.3s ease; }
+.msg-count { background: #ff4d4f; color: white; border-radius: 5px; padding: 3px 6px; font-size: 12px; font-weight: 500; margin-left: auto; margin-right: 10px; }
+.has-dropdown.open > a .nav-arrow { transform: rotate(90deg); }
+.submenu { list-style: none; padding: 5px 0; margin: 0; background-color: #f8f9fa; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+.has-dropdown.open > .submenu { max-height: 200px; }
+.submenu li a { padding: 8px 25px 8px 55px; font-size: 13px; color: #888; }
+.submenu li a:hover, .submenu li.active-submenu a { color: #2c3e50; font-weight: 500;}
+
+.main-content { flex-grow: 1; padding: 0 25px; background: url('https://portal.pau.edu.ng/assets/img/bg-pattern-light.png') repeat; }
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 25px; background-color: #2e3a6e; color: #fff; margin: 0 -25px; }
+.dashboard-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.dashboard-header h2 { margin: 0; font-size: 20px; font-weight: 600; }
+.breadcrumb { font-size: 14px; color: #777; }
+.card-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.stat-card { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: relative; overflow: hidden; display: flex; align-items: flex-start; }
+.stat-card i { font-size: 20px; margin-right: 15px; }
+.stat-card .stat-info { text-align: left; }
+.stat-card h2 { margin: 0; font-size: 22px; font-weight: 600; color: #333; }
+.stat-card p { margin: 5px 0 10px 0; color: #777; font-size: 13px; }
+.stat-card .progress-bar { position: absolute; bottom: 0; left: 0; height: 5px; width: 100%; }
+.stat-card.blue i { color: #1976d2; } .stat-card.blue .progress-bar { background: #1976d2; }
+.stat-card.green i { color: #24a537; } .stat-card.green .progress-bar { background: #24a537; }
+.stat-card.purple i { color: #7460ee; } .stat-card.purple .progress-bar { background: #7460ee; }
+.stat-card.red i { color: #ef5350; } .stat-card.red h2.red-text { color: #ef5350; } .stat-card.red .progress-bar { background: #ef5350; }
+
+.content-grid-four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 25px; }
+.card { border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+.card h4 { margin-top: 0; margin-bottom: 20px; font-size: 16px; display: flex; align-items: center; font-weight: 600; }
+.card.dark-blue { background: #2e3a6e; color: #fff; }
+.card.green-bg, .card.dark-green-bg { background: #24a537; color: #fff; }
+.card.white { background: #fff; text-align: center;}
+.view-fees-btn, .academic-results-btn { background: #2e3a6e; color: #fff; border:none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; display: block; margin: 20px auto 0 auto;}
+.card.white .user-icon-large { font-size: 32px; color: #ccc; margin-bottom: 15px; }
+.profile-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 25px; margin-top: 25px; text-align: left;}
+.profile-details { display: flex; gap: 20px; }
+.profile-details p { font-size: 14px; color: #333; margin-bottom: 12px; line-height: 1.4; }
+.profile-details p span { color: #888; display: block; font-size: 13px; margin-bottom: 3px; }
+.change-password-btn { background: #e74c3c; color: #fff; border:none; padding: 12px 20px; border-radius: 5px; cursor: pointer; float: right; margin-top: 20px; font-size: 14px;}
+.main-footer { text-align: left; padding: 20px 0; margin-top: 20px; font-size: 14px; }
+.main-footer p { margin: 0; color: #67757c; }
+.footer-red-text { color: #e53935; }
+
+/* =================================
+   ACADEMICS - SUBJECTS PAGE STYLES
+   ================================= */
+.page-main-title { font-size: 20px; font-weight: 600; margin: 0; color: #34495e; }
+.subjects-content-wrapper { background-color: #fff; margin-top: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow: hidden; }
+.course-selection-panel { padding: 20px; text-align: center; }
+.course-selection-panel label { display: block; margin-bottom: 8px; font-size: 13px; color: #888; }
+.course-selection-panel select { width: 100%; max-width: 450px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; margin: 0 auto 20px auto; color: #67757c; }
+.semester-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.semester-tabs button { border: 1px solid #ddd; background-color: transparent; padding: 8px 18px; border-radius: 5px; cursor: pointer; font-size: 13px; color: #555; }
+.semester-tabs button.active { background-color: #2e3a6e; color: white; border-color: #2e3a6e; }
+.unit-load-info { font-size: 13px; color: #24a537; margin-bottom: 20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+.unit-load-info span { margin: 0 15px; }
+.unit-load-info .green-text { color: #24a537; }
+.approved-courses-title { color: #24a537; font-size: 16px; font-weight: 600; margin: 10px 0 0 0; }
+.courses-table { width: 100%; border-collapse: collapse; }
+.courses-table th, .courses-table td { padding: 18px 20px; text-align: left; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+.courses-table td { color: #67757c; }
+.courses-table thead { background-color: #34495e; }
+.courses-table thead th { font-weight: 500; color: white; }
+.courses-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
+.courses-table tbody tr:hover { background-color: #f1f5f9; }
+.courses-table .actions { text-align: right; font-size: 13px; }
+.courses-table .actions a { text-decoration: none; color: #67757c; }
+.courses-table .actions .exam-slip { color: #e53535; }
+.total-units-load { text-align: center; padding: 20px; font-size: 18px; font-weight: 500; color: #333; background-color: #f8f9fa; border-top: 1px solid #f0f0f0; }
+
+/* =================================
+   RESPONSIVE STYLES
+   ================================= */
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; z-index: 1000; }
+.overlay.overlay-visible { opacity: 1; visibility: visible; }
+@media (max-width: 1400px) { .page-wrapper { max-width: 100%; box-shadow: none; } }
+@media (max-width: 1200px) {
+    .content-grid-four, .card-row, .profile-grid { grid-template-columns: repeat(2, 1fr); }
+    .subjects-content-wrapper { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .main-container { flex-direction: column; }
+    .menu-icon { display: block; }
+    .sidebar { position: fixed; top: 0; left: -250px; height: 100%; z-index: 1001; }
+    .sidebar.sidebar-visible { left: 0; }
+    .card-row, .content-grid-four, .profile-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* =========================================================
+   DASHBOARD - FINAL REVISIONS (Aapke Points ke Mutabiq)
+   ========================================================= */
+
+.card-row {
+    gap: 0px;
+}
+.stat-card i {
+    font-size: 15px; 
+}
+.stat-card h2 {
+    font-size: 15px;
+}
+
+
+.content-grid-four {
+    gap: opx;
+}
+
+.card h4 i {
+    font-size: 25px;
+    margin-right: 10px;
+    vertical-align: middle; 
+}
+
+
+.card.white {
+    text-align: left; 
+}
+
+.card.white .details-p,
+.card.white .details-p strong {
+    font-size: 15px;
+    color: #888;
+    font-weight: 400; 
+}
+
+.academic-results-btn {
+    width: auto; 
+    display: inline-block; 
+    padding: 10px 10px; 
+}
+
+.card.white .button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sidebar-header img {
+    width: 95px;
+  
+}
+
+
+.header-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 20px 25px;
+    margin-bottom: 25px; 
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   TIME-TABLE PAGE STYLES 
+   ========================================================== */
+
+.timetable-v2-container {
+    background-color: #fff;
+    margin-top: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+
+.timetable-v2-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timetable-v2-actions .btn-group {
+    display: flex;
+    gap: 5px;
+}
+
+.subjects-btn {
+    background-color: #7460ee; color: white; border: none; padding: 10px 20px;
+    font-size: 14px; border-radius: 5px; cursor: pointer; display: flex;
+    align-items: center; gap: 8px;
+}
+
+.refresh-btn {
+    background-color: #fff; border: 1px solid #ddd; color: #555; padding: 10px;
+    width: 40px; height: 40px; font-size: 14px; border-radius: 5px; cursor: pointer;
+}
+
+.search-container { position: relative; }
+
+.quick-search-input {
+    border: 1px solid #ddd; border-radius: 5px; padding: 10px 35px 10px 15px;
+    font-size: 14px; width: 250px;
+}
+
+.search-container .search-icon {
+    position: absolute; right: 12px; top: 50%;
+    transform: translateY(-50%); color: #aaa;
+}
+
+.timetable-v2-wrapper { overflow-x: auto; }
+
+.timetable-v2 {
+    width: 100%; border-collapse: collapse; min-width: 900px;
+}
+
+
+.timetable-v2 th, .timetable-v2 td {
+    border: 1px solid #f0f0f0;
+    padding: 20px 15px; 
+    text-align: center;
+}
+
+.timetable-v2 thead th {
+    background-color: #2e3a6e; color: white; font-size: 13px;
+    font-weight: 600; padding: 12px;
+}
+
+
+.timetable-v2 .period-label {
+    font-weight: 500; 
+    font-size: 14px;
+    color: #00838f;
+    background-color: transparent !important;
+}
+
+.timetable-v2 tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.timetable-v2 .time-slot {
+    font-size: 12px; color: #888;
+}
+
+.timetable-v2 .break-row td,
+.timetable-v2 tr.break-row:nth-child(even) td {
+    background-color: #ef5350 !important;
+    color: white; font-weight: bold; font-size: 16px; padding: 18px;
+}
+
+
+
+
+/* =================================
+   GRADES / PERFORMANCE REPORT PAGE STYLES
+   ================================= */
+
+.grades-content-wrapper {
+    background-color: #fff;
+    margin-top: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 25px;
+}
+
+.academic-transcript-link {
+    text-decoration: none;
+    color: #2e3a6e;
+    font-weight: 300;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.grades-table-container {
+    overflow-x: auto; 
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grades-table th, .grades-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #67757c;
+}
+
+.grades-table thead {
+    background-color: #2e3a6e; 
+}
+
+.grades-table thead th {
+    font-weight: 600;
+    color: white;
+}
+
+.grades-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; 
+}
+
+.grades-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.semester-report-link {
+    text-decoration: none;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: right;
+    display: block;
+}
+
+
+
+
+/* ====================================================
+   FEES & BILLS PAGE STYLES 
+   ==================================================== */
+
+/* Top Cards */
+.fees-top-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 20px; }
+.fee-card-v2 { color: white; border-radius: 4px; background-color: #ef5350; }
+.fee-card-v2.green-bg { background-color: #24a537; }
+.fee-card-header { padding: 10px 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+.fee-card-header p { margin: 0; font-size: 14px; font-weight: 500; }
+.fee-card-body { padding: 15px; text-align: center; }
+.fee-card-body i { font-size: 35px; margin-bottom: 8px; display: block; }
+.fee-card-body h3 { font-size: 14px; margin: 0; color: #e0e0e0; font-weight: 500; }
+
+.fees-main-grid { display: grid; grid-template-columns: 210px 1fr; gap: 15px; }
+
+/* Left Grey Card */
+.card-grey { background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.fees-left-panel.card-grey .form-group label { color: #999; display: block; margin-bottom: 8px; font-size: 12px; }
+.fees-left-panel.card-grey .form-group select { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 5px; color: #888; height: 38px; }
+.fees-actions-nav { display: flex; flex-direction: column; gap: 6px; margin-top: 15px; }
+.fees-actions-nav button { padding: 9px 15px; font-size: 13px; border-radius: 5px; height: 38px; background-color: #2e3a6e; color: white; border: none; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px; }
+.fees-actions-nav button i { font-size: 15px; width: 18px; text-align: center; }
+
+/* Right White Card */
+.card-white { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.bank-details { font-size: 13px; text-align: right; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
+.bank-details .text-grey { color: #888; }
+.bank-details .bank-name { color: #e53935; font-weight: bold; }
+.bank-details .acc-number { background-color: #e53935; color: white; padding: 2px 6px; border-radius: 4px; }
+.bank-details .acc-title { display: block; margin-top: 8px; font-size: 12px; }
+.bank-details .acc-title strong.text-red { font-weight: bold; }
+
+.fees-table-container { overflow-x: auto; }
+.fees-table { width: 100%; border-collapse: collapse; }
+.fees-table td { color: #888; }
+.fees-table th, .fees-table td { padding: 9px 12px; text-align: left; border: 1px solid #f0f0f0; font-size: 13px; vertical-align: middle; }
+.fees-table thead { background-color: #34495e; }
+.fees-table thead th { color: white; font-weight: 500; border-color: #34495e; }
+.fees-table tbody tr:nth-child(odd) { background-color: #f9fafb; }
+.status-pill { padding: 4px 10px; border-radius: 12px; font-size: 12px; color: white; }
+.status-pill.status-paid { background-color: #24a537; }
+.status-pill.status-outstanding { background-color: #ef5350; }
+
+.fees-table tfoot td { padding: 10px 12px; border: 1px solid #f0f0f0; }
+.fees-summary-final { display: flex; justify-content: space-between; align-items: center; }
+.total-due-final { display: flex; align-items: center; gap: 10px; }
+.total-due-label { color: #e53935; margin-left: 190px; font-weight: 900; font-size: 10px; }
+.total-due-amount { font-size: 12px; color: #333; }
+
+.payment-method-final { display: flex; align-items: center; gap: 4px; }
+.payment-method-label { font-weight: 900; color: #e53935; font-size: 10px; margin-right: 2px; }
+.payment-method-final select { border: 1px solid #ddd; padding: 8px; border-radius: 5px; width: 180px; }
+.pay-now-btn { background-color: #24a537; color: white; border: none; font-weight: bold; padding: 12px 30px; border-radius: 5px; cursor: pointer; }
+
+
+.fees-bottom-actions-v2 { text-align: center; margin-top: 5px; padding-top: 5px; border-top: 1px solid #f0f0f0; }
+.generate-ticket-btn { background-color: #24a537; color: white; border: none; font-size: 12px; padding: 10px 25px; border-radius: 5px; cursor: pointer; display: inline-block; font-weight: 600; }
+
+.outstanding-bill-error { color: #e53935; font-size: 12px; font-weight: 900; margin-top: 5px; }
+
+
+
+
+
+
+
+
+
+
+/* =======================================================
+   ALLOWANCES/SHOP PAGE STYLES
+   ======================================================= */
+
+.allowance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.shopping-cart-btn {
+    background-color: #7460ee; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bank-details-allowance {
+    font-size: 13px;
+    text-align: right;
+    color: #e53935; 
+    font-weight: bold;
+}
+.bank-details-allowance .bank-name,
+.bank-details-allowance .acc-number {
+    font-weight: 900; 
+}
+
+
+.action-credit {
+    color: #24a537 !important; 
+    font-weight: 600;
+}
+
+.action-debit {
+    color: #ef5350 !important; 
+    font-weight: 600;
+}
+
+
+
+
+
+/* =======================================================
+   MESSAGING / MAILS PAGE STYLES 
+   ======================================================= */
+
+.messaging-container {
+    padding: 0;
+    margin-top: 25px;
+    border: 1px solid #f0f0f0;
+}
+
+.mail-actions { padding: 10px 20px; border-bottom: 1px solid #f0f0f0; }
+.mail-actions-left { display: flex; align-items: center; gap: 8px; }
+.mail-action-btn, .mail-action-btn-dropdown { background-color: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 8px 12px; cursor: pointer; font-size: 14px; }
+
+.dropdown-container { position: relative; display: inline-block; }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 100;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+.dropdown-menu a { color: #333; padding: 10px 15px; text-decoration: none; display: block; font-size: 14px; }
+.dropdown-menu a:hover { background-color: #f1f1f1; }
+.show-dropdown { display: block; }
+
+
+.mail-list { list-style: none; padding: 0; margin: 0; }
+.mail-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+.mail-item:hover { background-color: #f8f9fa; }
+.mail-item-left { display: flex; align-items: center; gap: 15px; }
+.mail-checkbox { width: 16px; height: 16px; }
+.mail-indicator { width: 15px; height: 4px; background-color: #3498db; border-radius: 2px; }
+
+
+.mail-sender { font-size: 14px; color: #888; font-weight: 500; }
+.mail-timestamp { font-size: 13px; color: #999; }
+
+
+.mail-item-right { display: flex; align-items: center; gap: 20px; }
+.mail-delete-icon { color: #888; font-size: 16px; }
+.mail-delete-icon:hover { color: #e74c3c; }
+
+
+.mail-footer {
+    padding: 20px;
+    text-align: left;
+    font-size: 14px;
+    color: #888;
+}
+
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.main-footer {
+    margin-top: auto; 
+}
+
+
+
+
+
+
+/* ====================================================
+   PUBLICATIONS PAGE STYLES 
+   ==================================================== */
+
+.publications-wrapper {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.publications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.publications-actions-left {
+    display: flex;
+    gap: 8px;
+}
+
+.advance-search-btn {
+    background-color: transparent;
+    border: 1px solid #05082e;
+    color: #555;
+    padding: 3px 68px; 
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.advance-search-btn:hover {
+    background-color: #2e3a6e; 
+    color: white;
+    border-color: #0e173b;
+}
+
+.search-icon-btn {
+    background-color: transparent;
+    border: 1px solid #030a49;
+    color: #555;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-icon-btn:hover {
+    background-color: #2e3a6e; 
+    color: white;
+    border-color: #0e173b;
+}
+
+
+.quick-search-placeholder {
+    font-size: 13px;
+    color: #aaa;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 3px;
+    width: 100px;
+    text-align: right;
+}
+
+.no-news-alert {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #a82432;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+
+
+/* ==========================================================
+   SEMESTER ACADEMIC REPORT PAGE STYLES 
+   ========================================================== */
+
+.report-page-bg { background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+.report-container { max-width: 900px; margin: 30px auto; background-color: #fff; padding: 30px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+.report-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; margin-bottom: 15px; background-image: url('https://portal.pau.edu.ng/assets/img/bg-pattern.png'); background-repeat: repeat; background-size: 200px; }
+.report-uni-details p { font-size: 13px; margin: 3px 0; color: #555; }
+.report-logo { width: 80px; }
+.report-uni-details h1 { font-size: 22px; color: #2e3a6e; margin: 0 0 5px 0; }
+.report-student-photo img { width: 90px; height: 90px; border: 3px solid #ddd; }
+.report-title { background-color: #2e3a6e; color: white; text-align: center; padding: 10px; font-size: 14px; font-weight: bold; margin-bottom: 20px; }
+
+.student-info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; border: 1px solid #eee; border-bottom: none; }
+.student-info-grid .info-item { padding: 6px 8px; border-bottom: 1px solid #eee; border-right: 1px solid #eee; }
+.student-info-grid .info-item:last-child { border-right: none; }
+.info-item .label { display: block; font-size: 10px; color: #999; margin-bottom: 2px; }
+.info-item .value { font-size: 12px; font-weight: 500; color: #777; }
+
+.results-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+.results-table thead th { padding: 12px 8px; }
+.results-table th, .results-table td { border: 1px solid #eee; padding: 8px; text-align: left; }
+.results-table thead { background-color: #2e3a6e; color: white; }
+.results-table thead th { font-weight: bold; font-size: 11px; }
+.results-table tbody td { font-size: 12px; color: #888; }
+.results-table .course-name { font-weight: bold; color: #666; }
+
+
+.summary-table { width: 100%; border-collapse: collapse; margin-top: 25px; font-size: 12px; }
+.summary-table th, .summary-table td { border: 1px solid #eee; padding: 8px; text-align: center; color: #888; }
+.summary-table thead { background-color: #f7f7f7; }
+.summary-table thead th { font-weight: 600; }
+.summary-table td { font-weight: 600; }
+
+.gpa-display { text-align: center; color: #24a537; padding: 10px; font-weight: bold; margin-top: 10px; margin-bottom: 40px; }
+
+
+.grading-scale {
+    float: none; 
+    width: 800px; 
+    margin: 40px auto 0 auto; 
+}
+.grading-scale-title { background-color: #2e3a6e; color: white; padding: 8px 12px; font-weight: bold; font-size: 13px; }
+.grading-scale-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.grading-scale-table td { border: 1px solid #eee; padding: 8px 12px; color: #777; }

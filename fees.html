@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills - Pan-Atlantic University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="page-wrapper">
+        <div class="main-container">
+            <!-- Sidebar -->
+           
+             <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <img src="images/logo.png" alt="PAU Logo">
+                </div>
+                
+                <div class="student-profile">
+                    <img src="images/profile.jpg" alt="Student Picture">
+                    <p class="profile-id">PAU/544ST20232555</p>
+                    <p class="profile-name text-red">OWOLABI</p>
+                    <p class="profile-name-light text-red">Oluwaseun</p>
+                    <p class="profile-id">23110211053</p>
+                    <button class="logout-btn" onclick="window.location.href='index.html'"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+                </div>
+                
+                <div class="profile-level-info">
+                    <p>300 Level - BA</p>
+                    <div>
+                        <i class="fas fa-cog"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-power-off"></i>
+                    </div>
+                </div>
+
+                <div class="sidebar-separator">
+                    <span>STUDENT PORTAL</span>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="has-dropdown open"> 
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li class="active-submenu"><a href="dashboard.html">Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-graduation-cap"></i> Academics</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="subjects.html">Subjects</a></li>
+                                <li><a href="timetable.html">Time-Table</a></li>
+                                <li><a href="grades.html">Grades</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                             <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-file-invoice-dollar"></i> Fees & Bills</div>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="fees.html">Semester fees</a></li>
+                                <li><a href="allowances.html">Allowances/Shop</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" class="nav-toggle">
+                                <div><i class="fas fa-envelope"></i> Messaging</div>
+                                <span class="msg-count">99,867</span>
+                            </a>
+                             <ul class="submenu">
+                                <li><a href="messaging.html">Messages / Mails</a></li>
+                                <li><a href="publications.html">Publications</a></li>
+                                <li><a href="dashboard.html">Uploads</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            
+
+            <main class="main-content">
+                <header class="main-header"><i class="fas fa-bars menu-icon" id="menu-icon"></i><div class="header-right"><span>Pan-Atlantic University</span><i class="fas fa-search"></i></div></header>
+                <div class="dashboard-header header-card"><h2 class="page-main-title">-- Bills</h2><div class="breadcrumb">Home > Fees</div></div>
+
+                <div class="fees-top-cards"><div class="fee-card-v2 red-bg"><div class="fee-card-header"><p>Outstanding Fees</p></div><div class="fee-card-body"><i class="fas fa-file-invoice-dollar"></i><h3>₦300.00</h3></div></div><div class="fee-card-v2 green-bg"><div class="fee-card-header"><p>Wallet Account Balance</p></div><div class="fee-card-body"><i class="fas fa-wallet"></i><h3>₦0.00</h3></div></div></div>
+
+                <div class="fees-main-grid">
+                    <div class="fees-left-panel card-grey">
+                        <div class="form-group"><label>Select Bill Term</label><select><option>Current Bills</option></select></div>
+                        <div class="fees-actions-nav">
+                            <button><i class="fas fa-calendar-alt"></i> Payment Plans</button><button><i class="fas fa-file-alt"></i> My Bills</button>
+                            <button><i class="fas fa-receipt"></i> Payment Invoice</button><button><i class="fas fa-file-invoice"></i> Payment receipts</button>
+                            <button><i class="fas fa-exchange-alt"></i> Transactions</button><button><i class="fas fa-shopping-cart"></i> Shop/Top-up</button>
+                        </div>
+                    </div>
+
+                    <div class="fees-right-panel card-white">
+                        <div class="bank-details"><span class="text-grey">Dedicated Student Bank Account Number:</span> <span class="bank-name">WEMA BANK | </span><span class="acc-number">9169158700</span><span class="acc-title"><span class="text-grey">Account Title:</span> <strong class="text-red">MFY-SEV OWOLABI Oluwaseun</strong></span></div>
+                        <div class="fees-table-container">
+                            <table class="fees-table">
+                                <thead><tr><th>S/N</th><th>Fee</th><th>Amount</th><th>Select</th><th>Type</th><th>Status</th><th>Due Date</th><th>Session</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Bill for second semester 200L</td><td>₦349,493.00</td><td><i class="fas fa-check text-grey"></i></td><td>Mandatory</td><td><span class="status-pill status-paid">Paid</span></td><td>2025-03-26 12:13:27</td><td>2024/2025 Semester 2</td></tr>
+                                    <tr><td>2</td><td>Health Insurancel part payment</td><td>₦29,700.00</td><td><i class="fas fa-check text-grey"></i></td><td>Mandatory</td><td><span class="status-pill status-paid">Paid</span></td><td>2025-03-26 12:10:00</td><td>2024/2025 Semester 2</td></tr>
+                                    <tr><td>3</td><td>Health Insurancel part payment</td><td>₦300.00</td><td><i class="fas fa-check text-grey"></i></td><td>Mandatory</td><td><span class="status-pill status-outstanding">Outstanding</span></td><td>2025-06-22 19:11:37</td><td>2024/2025 Semester 2</td></tr>
+                                </tbody>
+                               
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="8">
+                                            <div class="fees-summary-final">
+                                                <div class="total-due-final">
+                                                    <span class="total-due-label">TOTAL AMOUNT DUE:</span>
+                                                    <span class="total-due-amount">₦300.00</span>
+                                                </div>
+                                                <div class="payment-method-final">
+                                                    <span class="payment-method-label">PAYMENT METHOD</span>
+                                                    <select><option>School Payout</option></select>
+                                                    <button class="pay-now-btn">Pay Now</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="fees-bottom-actions-v2">
+                            <button class="generate-ticket-btn">Generate Payment Clearance Ticket / Gate Pass</button>
+                            <p class="outstanding-bill-error">Please select an outstanding bill.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer class="main-footer"><p>© 2025 <span class="footer-red-text">Schoolcube.net</span> Portal by Revocube Schoolrevs</p></footer>
+            </main>
+        </div>
+    </div>
+    <div class="chat-icon"><i class="fas fa-comment-dots"></i></div>
+    <script>const dropdownToggles=document.querySelectorAll('.nav-toggle');dropdownToggles.forEach(toggle=>{toggle.addEventListener('click',event=>{event.preventDefault();const parentLi=toggle.closest('.has-dropdown');if(!parentLi)return;document.querySelectorAll('.has-dropdown.open').forEach(openLi=>{if(openLi!==parentLi){openLi.classList.remove('open')}});parentLi.classList.toggle('open')})});const menuIcon=document.getElementById('menu-icon');const sidebar=document.getElementById('sidebar');const overlay=document.getElementById('overlay');function closeSidebar(){sidebar.classList.remove('sidebar-visible');overlay.classList.remove('overlay-visible')}menuIcon.addEventListener('click',()=>{sidebar.classList.add('sidebar-visible');overlay.classList.add('overlay-visible')});overlay.addEventListener('click',closeSidebar);</script>
+</body>
+</html>
